@@ -1,0 +1,67 @@
+\newcommand{\R}{\mathbb{R}} % real numbers
+\newcommand{\N}{\mathbb{N}} % natural numbers
+\newcommand{\C}{\mathbb{C}} % complex numbers
+\newcommand{\Q}{\mathbb{Q}} % rational numbers
+\newcommand{\Z}{\mathbb{Z}} % integers
+
+\newcommand{\vp}{\varphi}
+\newcommand{\ve}{\varepsilon}
+
+\newcommand{\corr}{\checkmark}
+
+%  White space
+\newcommand{\ws}[1]{% ws stands for white spaces
+  \ifnum#1>0
+    \foreach \i in {1,...,#1}{\;}%
+  \fi
+}
+
+% for code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+% for bibliography
+\AtBeginBibliography{%
+  \raggedright
+  \sloppy
+}
+
+% info boxes
+\newfloat{info@box}{tbp}{loi}[section]% 1: Name of float environment. 2: Default placement (top, bottom, ...). 3: File extension if written to an aux-file (like toc, lof, lot, loa, ...). 4: Numbering within <section/subsection/...>.
+\makeatother
+\floatname{info@box}{Infobox}% Adapt caption.
+
+\newenvironment{infobox}[1][]{% Create new environment using info@box and tcolorbox
+   \begin{info@box}%
+      \begin{tcolorbox}[colback=red!15!white,%                    background color
+            colframe=red!75!black,%                               frame color
+            title=Additional information\ifstrempty{#1}{}{: #1}.% title
+         ]%
+}{%
+      \end{tcolorbox}%
+   \end{info@box}%
+}
