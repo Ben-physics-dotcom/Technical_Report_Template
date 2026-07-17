@@ -1,0 +1,56 @@
+\input{Settings/AuthorsTitle}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,
+	urlcolor=cyan,
+	citecolor=lime!50!black,
+	filecolor=red
+}
+\addbibresource{example.bib} % Path adjusted
+
+%
+\lhead{\thedate}
+\lhead{\thetitle}
+
+\geometry{bottom=30mm, top=30mm, left=25mm, right=25mm}
+
+\usetikzlibrary{patterns}
+\usetikzlibrary{3d}
+
+\pagestyle{plain}
+
+\allowdisplaybreaks
+
+\makeindex[
+    title=Index,
+    intoc,
+    options= -s Index.ist
+]
+
+% general settings for codes
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}

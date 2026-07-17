@@ -1,0 +1,20 @@
+\begin{python}[
+    title={Python example}, 
+    caption={Python example}, 
+    label={lst: pe}]
+import numpy as np
+import pandas as pd
+
+A = np.array([
+    [1, 2, 3],
+    [0.5, 0.1, 0.5], 
+    [np.pi, 30, 25]
+])
+B = np.array([
+    [1, 0, 0.5],
+    [0, 1, 0], 
+    [1, 0, 1]
+])
+C = A @ B
+df = pd.read_csv('path/file.csv')
+\end{python}
