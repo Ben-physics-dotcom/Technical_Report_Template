@@ -1,0 +1,36 @@
+\documentclass[a4paper,10pt]{report}
+
+\input{Settings/packages}
+\input{Settings/commands}
+
+
+\input{Settings/python_code_settings}
+
+% =============================================================
+% GENERAL SETTINGS (hyperref setup, bibliography, geometry, index, ...)
+% This file itself pulls in Settings/AuthorsTitle.tex
+% =============================================================
+\input{Settings/settings_file}
+
+\begin{document}
+
+\input{Settings/titlepage}
+
+\pagenumbering{roman}
+\input{Content/Abstract}
+\tableofcontents
+\newpage
+
+\input{Settings/acronyms}
+\newpage
+
+\pagenumbering{arabic}
+\include{Chapters/introduction}
+\appendix
+\newpage
+\printbibliography
+
+\newpage
+\printindex
+
+\end{document}
